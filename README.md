@@ -19,7 +19,7 @@ slys
     ./setup.sh 
 
 
-Windows users can follow instructions from htttp://code.google.com/p/slyscommerce/wiki/Installation
+Windows users can follow instructions from <a href="http://code.google.com/p/slyscommerce/wiki/Installation">http://code.google.com/p/slyscommerce/wiki/Installation</a>
 
 You may also want to look at Questions & Answers at http://slys.webdirect.md
 
