@@ -1,0 +1,68 @@
+<h1><?php echo $this->translate('banners_list');?></h1>
+<table class="admin-table" cellpadding="0" cellspacing="0">
+    <tr class="title">
+        <th><?php echo $this->translate('title');?></th>
+        <th><?php echo $this->translate('type');?></th>
+        <th><?php echo $this->translate('preview');?></th>
+        <th colspan="2">&nbsp;</th>
+    </tr>
+    <?php
+    /** @var Mapper_Banner $item */
+    foreach($this->list as $k => $item):?>
+    <tr class="row<?php echo ($k%2 == 1) ? '2' : '';?>">
+        <td><?php echo $this->link($item->name, $this->url(array('module'=>'banner','action'=>'edit','id'=>$item->id),'admin',true) );?></td>
+        <td><?php echo Banner_Model_Banners::getTypeByCode($item->type) ?></td>
+        <td height="50px" width="200px">
+
+          <?php if ($item->type == 'text'): ?>
+
+              <?php echo $item->text ?>
+
+          <?php elseif ($item->type == 'image'): ?>
+
+             <img src="<?php echo Banner_Model_Banners::getSource($item) ?>" alt="" height="50px">
+
+          <?php elseif ($item->type == 'flash'): ?>
+
+             <object
+              classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+              codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,42,0"
+              id="<?php echo $item->name ?>"
+              width="<?php echo $item->flash_width ?>" height="<?php echo $item->flash_height ?>"
+              class="greenBorder"
+              style="display:block;"
+            >
+
+            <param name="movie" value="poiana_322x146.swf">
+              <param name="bgcolor" value="#FFFFFF">
+              <param name="quality" value="high">
+              <param name="seamlesstabbing" value="false">
+
+              <param name="allowscriptaccess" value="samedomain">
+              <embed
+                type="application/x-shockwave-flash"
+                pluginspage="http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+                name="<?php $item->name ?>"
+                width="<?php echo $item->flash_width ?>" height="<?php echo $item->flash_height ?>"
+                src="<?php echo Banner_Model_Banners::getSource($item) ?>"
+                bgcolor="#FFFFFF"
+                quality="high"
+                seamlesstabbing="false"
+                allowscriptaccess="samedomain"
+              >
+                <noembed>
+                </noembed>
+              </embed>
+            </object>
+
+          <?php endif ?>
+
+
+        </td>
+        <td>
+            <?php echo $this->link( 'edit' ,$this->url(array('module'=>'banner','action'=>'edit','id'=>$item->id),'admin',true) );?>
+            <?php echo $this->link( 'delete' ,$this->url(array('module'=>'banner','action'=>'delete','id'=>$item->id),'admin',true) );?>
+        </td>
+    </tr>
+    <?php endforeach;?>
+</table>

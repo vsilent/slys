@@ -1,0 +1,16 @@
+<h1>
+	Activity
+</h1>
+<div class="hot-news-list widget-box">
+	<?php foreach ($this->news as $item) {?>
+		<div class="news-list-item">
+			<div class="news-item-title">
+				<?php echo $item->publish_date;?> |
+				<?php echo $item->title;?>
+			</div>
+			<div class="news-item-content">
+				<?php echo $item->content; ?>
+			</div>
+		</div>
+		<?php } ?>
+</div>

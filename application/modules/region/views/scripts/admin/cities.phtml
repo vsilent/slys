@@ -1,0 +1,32 @@
+<h2><?php echo $this->translate('cities');?></h2>
+
+<?php if (empty($this->cities) === false): ?>
+
+<table class="admin-table">
+    <tr>
+        <th><?php echo $this->translate('title');?></th>
+        <th><?php echo $this->translate('region');?></th>
+        <th><?php echo $this->translate('actions'); ?></th>
+    </tr>
+
+    <?php foreach($this->cities as $city): ?>
+    <tr>
+        <td><?php echo $city->title; ?></td>
+        <td><?php echo $city->Region->title; ?></td>
+        <td>
+            <a class="edit-item" href="<?php echo $this->url(array('action'=>'edit-city','module'=>'region','controller'=>'admin','id'=>$city->id));?>">
+                <?php echo $this->translate('edit'); ?>
+            </a>
+
+            &nbsp;/&nbsp;
+
+            <a class="delete-item" href="<?php echo $this->url(array('action'=>'delete-city','module'=>'region','controller'=>'admin','id'=>$city->id));?>">
+                <?php echo $this->translate('delete'); ?>
+            </a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+
+</table>
+
+<?php endif; ?>

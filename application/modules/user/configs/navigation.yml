@@ -1,0 +1,64 @@
+label: Users manager
+module: user
+controller: admin
+class: MenuBarItemIcon icon-users
+pages:
+  Users:
+    label: Users
+    class: MenuBarItemIcon icon-user-list
+    module: user
+    controller: admin
+    action: users
+    pages:
+      NewUser:
+        label: New user
+        module: user
+        controller: admin
+        action: edit-user
+        class: MenuBarItemIcon icon-add
+  ACL:
+    label: ACL
+    class: MenuBarItemIcon icon-key
+    module: user
+    controller: admin
+    action: acl
+    pages:
+      Rules:
+        label: Rules
+        module: user
+        controller: admin
+        action: rules
+        class: MenuBarItemIcon icon-rules
+        pages:
+          NewRule:
+            label: New Rule
+            module: user
+            controller: admin
+            action: edit-rule
+            class: MenuBarItemIcon icon-add
+      Roles:
+        label: Roles
+        class: MenuBarItemIcon icon-roles
+        module: user
+        controller: admin
+        action: roles
+        pages:
+          NewRole:
+            label: New Role
+            module: user
+            controller: admin
+            action: edit-role
+            class: MenuBarItemIcon icon-add
+  AdminLogin:
+    label: Administrator login
+    class: MenuBarItemIcon icon-roles
+    module: user
+    controller: admin
+    action: login
+    visible: false
+  Settings:
+    label: Settings
+    class: MenuBarItemIcon icon-settings
+    module: user
+    controller: admin
+    action: settings

@@ -1,0 +1,114 @@
+<?php
+  $this->headScript()->appendFile('/themes/interteam/js/ckeditor/ckeditor.js', 'text/javascript');
+  $this->headScript()->appendFile('/themes/interteam/js/ckfinder/ckfinder.js', 'text/javascript');
+?>
+<h1><?php echo $this->title;?></h1>
+<?php echo $this->form; ?>
+
+<script type="text/javascript">
+	window.onload = function()
+	{
+		var editor = CKEDITOR.replace( 'text',
+				{
+					toolbar : 'CustomToolbar',
+					skin : 'office2003',
+					height: '400'
+
+				} );
+        CKFinder.setupCKEditor( editor, '/themes/interteam/js/ckfinder/' ) ;
+	};
+
+
+
+  $(document).ready(function() {
+
+    // type onchange
+    $('#type').change(function(){
+      switch ($(this).val())
+      {
+        case ('text'):
+          hideLinks();
+          $('#text-label, #text-element').show();
+          $('#src-label').hide();
+          $('#src').parent().hide();
+          $('#flash_width-label, #flash_width-element, #flash_height-label, #flash_height-element').hide();
+        break;
+
+        case ('image'):
+          showLinks();
+          $('#text-label, #text-element').hide();
+          $('#src-label').show();
+          $('#src').parent().show();
+          $('#flash_width-label, #flash_width-element, #flash_height-label, #flash_height-element').hide();
+        break;
+
+        case ('flash'):
+          hideLinks(); 
+          $('#text-label, #text-element').hide();
+          $('#src-label').show();
+          $('#src').parent().show();
+          $('#flash_width-label, #flash_width-element, #flash_height-label, #flash_height-element').show();
+        break;
+      }
+    }).change();
+
+    $('input[name=link_type]').change(function(){
+
+      if ($(this).is(':checked') &&  $('#type').val() == 'image')
+      {
+        switch ($(this).val())
+        {
+          case ('external'): 
+            $('#sysmap_id-label, #sysmap_id-element').hide();
+            $('#link-label, #link-element').show();
+          break;
+
+          case ('internal'):
+            $('#sysmap_id-label, #sysmap_id-element').show();
+            $('#link-label, #link-element').hide();
+          break;
+        }
+      }
+
+    }).change();
+
+    function hideLinks()
+    {
+      $('#link_type-label, #link_type-element').hide();
+      $('#link-label, #link-element').hide();
+      $('#sysmap_id-label, #sysmap_id-element').hide();
+    }
+
+    function showLinks()
+    {
+      $('#link_type-label, #link_type-element, #sysmap_id-label, #sysmap_id-element, #link-label, #link-element').show();
+      $('input[name=link_type]').change();
+    }
+
+    function beforeSubmit()
+    {
+
+      if ($('input[name=link_type]:checked').val()=='external')
+      {
+        $('input[name=sysmap_id]:checked').removeAttr('checked')
+      }
+      else
+      {
+        $('#link').val('');
+      }
+      return true;
+    }
+
+    
+    if ($('input[name=sysmap_id]:checked').val())
+    {
+      $('#link_type-internal').attr('checked', 'checked');
+      $('input[name=link_type]').change();
+    }
+    $('#submit').click(beforeSubmit);
+
+  })
+
+
+  
+</script>

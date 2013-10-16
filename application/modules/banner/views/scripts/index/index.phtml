@@ -1,0 +1,70 @@
+<?php foreach($this->list as $k => $item):?>
+
+  <div class="banner" style="margin-bottom:20px">
+  
+  <?php if ($item->type == 'text'): ?>
+
+      <?php echo $item->text ?>
+    
+  <?php elseif ($item->type == 'image'): ?>
+
+      <?php
+        if (!empty($item->sysmap_id))
+        {
+          $mca = $item->getMCA();
+
+          if ($mca)
+          {
+            $options = array('module'=>$mca['module'],'action'=>$mca['action']);
+            $options = array_merge($options, $mca['params']);
+            $url = $this->url($options, $mca['controller'], true);
+          }
+        }
+        else if (!empty($item->link))
+          $url = $item->link;
+        else
+          $url = '#'
+      ?>
+
+      <a href="<?php echo $url ?>" target="_blank">
+        <img src="<?php echo Banner_Model_Banners::getSource($item) ?>" alt="">
+      </a>
+    
+  <?php elseif ($item->type == 'flash'): ?>
+
+    <object
+      classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+      codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,42,0"
+      id="<?php echo $item->name ?>"
+      width="<?php echo $item->flash_width ?>" height="<?php echo $item->flash_height ?>"
+      class="greenBorder"
+      style="display:block;"
+    >
+
+    <param name="movie" value="poiana_322x146.swf">
+      <param name="bgcolor" value="#FFFFFF">
+      <param name="quality" value="high">
+      <param name="seamlesstabbing" value="false">
+
+      <param name="allowscriptaccess" value="samedomain">
+      <embed
+        type="application/x-shockwave-flash"
+        pluginspage="http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+        name="<?php $item->name ?>"
+        width="<?php echo $item->flash_width ?>" height="<?php echo $item->flash_height ?>"
+        src="<?php echo Banner_Model_Banners::getSource($item) ?>"
+        bgcolor="#FFFFFF"
+        quality="high"
+        seamlesstabbing="false"
+        allowscriptaccess="samedomain"
+      >
+        <noembed>
+        </noembed>
+      </embed>
+    </object>
+
+  <?php endif ?>
+    
+  </div>
+  
+<?php endforeach;?>

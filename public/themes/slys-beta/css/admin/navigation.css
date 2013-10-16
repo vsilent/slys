@@ -1,0 +1,23 @@
+#navbar-content ul.navigation {
+    margin: 0;
+}
+
+#navbar-content ul.navigation ul {
+    padding-left: 20px;
+}
+
+#navbar-content ul.navigation li {
+    /*padding: 0;*/
+    list-style: none;
+}
+
+#navbar-content ul.navigation li a {
+    display: block;
+    color: #426DC9;
+    font-size: 14px;
+    padding: 2px 0;
+}
+
+#navbar-content ul.navigation li a:hover {
+    text-decoration: none;
+}

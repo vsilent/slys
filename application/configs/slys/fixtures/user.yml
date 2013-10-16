@@ -1,0 +1,41 @@
+User_Model_Mapper_User:
+  User_1:
+    login: user
+    firstname: Muler
+    lastname: Ahtung
+    password: 4297f44b13955235245b2497399d7a93
+    role_id: 2
+    active: true
+  User_2:
+    login: admin
+    firstname: Admin
+    lastname:
+    password: 4297f44b13955235245b2497399d7a93
+    role_id: 4
+    active: true
+
+User_Model_Mapper_Role:
+  Role_1:
+    id: 1
+    name: guest
+    parent_id: null
+    is_default: true
+  Role_2:
+    id: 2
+    name: user
+    parent_id: 1
+  Role_3:
+    id: 3
+    name: manager
+    parent_id: 4
+  Role_4:
+    id: 4
+    name: admin
+    parent_id: 2
+
+User_Model_Mapper_Rule:
+  Rule_1:
+    id: 1
+    role_id: 4
+    resource_id: 0-816563134a61e1b2c7cd7899b126bde4
+    rule: allow

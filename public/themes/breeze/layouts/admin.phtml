@@ -1,0 +1,76 @@
+<?php echo $this->doctype() . PHP_EOL; ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <?php
+        $this->headLink()->appendStylesheet('/themes/default/css/admin.css');
+        echo $this->headTitle('SlyS Administration') . PHP_EOL .
+        $this->headMeta() . PHP_EOL .
+        $this->headLink() . PHP_EOL .
+        $this->headStyle() . PHP_EOL .
+        $this->dojo() . PHP_EOL .
+        $this->headScript();
+        ?>
+    </head>
+    <style type="text/css">
+    html, body { width: 100%; height: 100%; margin: 0; overflow:hidden; }
+    #borderContainer { width: 100%; height: 100%; }
+</style>
+    <body class="claro">
+
+        <div id="border1" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props='style:"width: 100%; height: 100%;"'>
+
+        <div role="banner" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='id:"border1-top", region:"top",  splitter:true'>
+
+            <div id="header">
+                <div class="container">
+                    <div id="logo">
+                        <a href="<?php echo $this->url(array('module' => ''), 'admin', true); ?>">
+                            Administrator Panel
+                        </a>
+                    </div>
+                </div>
+                <div class="user-menu"><?php echo $this->layout()->usermenu; ?></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+        <?php if (!empty($this->layout()->left)) { ?>
+            <div role="navigation" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='id:"border1-left", region:"left",
+		splitter:true, minSize:150, maxSize:250'>
+            <div class="left">
+                <div id="left"><?php echo $this->layout()->left; ?></div>
+            </div>
+            </div>
+        <?php } ?>
+
+           <div role="main" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='id:"border1-center", region:"center" '>
+
+
+                <div class="breadcrumbs"><div class="main-breadcrumbs"><div class="left-breadcrumbs">
+                            <div class="right-breadcrumbs">
+                                <div class="breadcrumbs-link"><a class="breadcrumbs-home" href="/">&nbsp;</a></div>
+                                <div class="breadcrumbs-separator"></div>
+                                    <?php echo $this->navigation()
+                                            ->breadcrumbs()
+                                            ->setMinDepth(0)
+                                            ->setLinkLast(true)
+                                            ->setSeparator('<div class="breadcrumbs-separator"></div>'); ?>
+                            </div>
+                        </div></div></div>
+
+
+                    <?php echo $this->layout()->top; ?>
+                    <?php echo $this->layout()->content; ?>
+
+
+           </div>
+        <div class="footer">
+            <div id="footer">Powered by <a href="#">SlyS</a>
+            <?php echo $this->layout()->footer; ?></div>
+        </div>
+
+
+        </div>
+    </body>
+</html>

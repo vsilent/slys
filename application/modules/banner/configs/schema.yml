@@ -1,0 +1,12 @@
+Banner_Model_Mapper_Banner:
+  tableName: banner
+  actAs: [Timestampable]
+  columns:
+    name:       {type: string(255)}
+    type:       {type: enum, values: [text, image, flash], default: text}
+    link:       {type: string(255)}
+    src:        {type: string(255)}
+    sysmap_id:  {type: string(35), default: null}
+    text:       {type: string(4000)}
+    flash_width:  {type:int, default: null}
+    flash_height: {type:int, default: null}

@@ -1,0 +1,108 @@
+Templater_Model_Mapper_Theme:
+  Templater_1:
+    id: 1
+    name: default
+    title: Default theme
+    current: true
+    ordering: 1
+
+Templater_Model_Mapper_Layout:
+  Layout_1:
+    id: 1
+    title: Main layout
+    name: index
+    theme_id: 1
+    published: true
+  Layout_2:
+    id: 2
+    title: Admin layout
+    name: admin
+    theme_id: 1
+    published: true
+  Layout_3:
+    id: 3
+    title: Admin login
+    name: login
+    theme_id: 1
+    published: true
+
+Templater_Model_Mapper_LayoutPoint:
+  Layout_1:
+    map_id: 0-816563134a61e1b2c7cd7899b126bde4
+    layout_id: 1
+  Layout_2:
+    map_id: 2-afaf43926eecf8541044c75fb6afd8fa
+    layout_id: 2
+  Layout_3:
+    map_id: 2-c2935b0c7994fd961849eb60d35e8d9a
+    layout_id: 2
+  Layout_4:
+    map_id: 2-376b3b65ea372d9e5cbad0d147d33218
+    layout_id: 2
+  Layout_5:
+    map_id: 2-8a3c73df5ecb0d14ed222b719197e19b
+    layout_id: 2
+  Layout_6:
+    map_id: 2-536fca5b41c263d3c75be3a6b172e3c6
+    layout_id: 2
+  Layout_7:
+    map_id: 3-b66ea47d80b055d62d1ea4cd133c575d
+    layout_id: 3
+
+Templater_Model_Mapper_Widget:
+  Widget_1:
+    id: 1
+    name: Flash messager
+    map_id: 3-80dc6b3841ef4ff214f33344d91b66d4
+    published: true
+    placeholder: top
+    layout_id: 2
+  Widget_2:
+    id: 2
+    name: SlyS navigation
+    map_id: 3-74078250f9d9a091d1f8399df232238c
+    published: true
+    placeholder: left
+    layout_id: 2
+
+Templater_Model_Mapper_WidgetPoint:
+  Widget_1:
+    id: 1
+    map_id: 0-816563134a61e1b2c7cd7899b126bde4
+    widget_id: 1
+  Widget_2:
+    id: 2
+    map_id: 2-c2935b0c7994fd961849eb60d35e8d9a
+    widget_id: 2
+  Widget_3:
+    id: 3
+    map_id: 2-5c9a7d59bbb71bb2313f086de217d3f4
+    widget_id: 2
+  Widget_4:
+    id: 4
+    map_id: 2-376b3b65ea372d9e5cbad0d147d33218
+    widget_id: 2
+  Widget_5:
+    id: 5
+    map_id: 2-8a3c73df5ecb0d14ed222b719197e19b
+    widget_id: 2
+  Widget_6:
+    id: 6
+    map_id: 2-536fca5b41c263d3c75be3a6b172e3c6
+    widget_id: 2
+  Widget_7:
+    id: 7
+    map_id: 2-afaf43926eecf8541044c75fb6afd8fa
+    widget_id: 2
+  Widget_8:
+    id: 8
+    map_id: 2-2b50543f81bc3b8480f736fd0cd50da3
+    widget_id: 2
+  Widget_9:
+    id: 9
+    map_id: 2-baa3433f2f638106da9f3414ec678eef
+    widget_id: 2
+  Widget_10:
+    id: 10
+    map_id: 2-2784035b53f9f6eeb60c15dd8273bae7
+    widget_id: 2

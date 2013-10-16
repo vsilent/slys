@@ -1,0 +1,14 @@
+Email_Model_Mapper_Template:
+  tableName: email_template
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer
+    sysname:
+      type: string(64)
+      unique: true
+    subject: string(255)
+    email_from: string(64)
+    reply_to: string(64)
+    message: text

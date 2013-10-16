@@ -1,0 +1,33 @@
+News_Model_Mapper_News:
+  tableName: news_news
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer
+    sysname:
+      type: string(64)
+      unique: true
+    title:
+      type: string(65)
+    content:
+      type: string(4000)
+    meta_keywords:
+      type: string(255)
+    meta_description:
+      type: string(4000)
+    built_in:
+      type: boolean
+      default: false
+    user_id:
+      type: integer(11)
+      primary: true
+    publish_date:
+      type: date
+  relations:
+    User:
+      class: User_Model_Mapper_User
+      local: user_id
+      foreign: id
+      foreignAlias: Products
+      onDelete: CASCADE

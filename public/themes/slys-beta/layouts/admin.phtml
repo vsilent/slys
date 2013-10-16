@@ -1,0 +1,33 @@
+<?php echo $this->doctype() . PHP_EOL; ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <?php
+        $this->headLink()->appendStylesheet('/themes/slys-beta/css/admin.css');
+        echo $this->headTitle('SlyS Administration') . PHP_EOL .
+        $this->headMeta() . PHP_EOL .
+        $this->headLink() . PHP_EOL .
+        $this->headStyle() . PHP_EOL .
+        $this->headScript();
+        ?>
+    </head>
+    <body>
+        <div id="main-content">
+            <div id="navbar">
+                <div id="navbar-content">
+
+                    <h1>Navigation</h1>
+                    <?php echo $this->layout()->left; ?>
+
+                </div>
+            </div>
+            <div id="mainview">
+                <div id="mainview-content">
+                    <?php echo $this->layout()->top; ?>
+                    <?php echo $this->layout()->content; ?>
+                </div>
+            </div>
+            <div id="footer">
+                <?php echo $this->layout()->footer; ?>
+            </div>
+        </div>
+</html>

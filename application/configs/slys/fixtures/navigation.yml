@@ -1,0 +1,27 @@
+Navigation_Model_Mapper_Item:
+  # (!) THAT NODE MUST ALWAYS BE FIRST WITH 'menu' TYPE AND IT MUST BE THE ONLY ONE ROOT ELEMENT
+  NavigationRoot:
+    type: menu
+    # title is no matter. you can name it as you like
+    title: "App navigation"
+    # MUST BE READ ONLY
+    read_only: true
+    children:
+      Frontend:
+        type: menu
+        title: "Site navigation"
+        read_only: true
+      Backend:
+        type: menu
+        title: "Admin navigation"
+        read_only: true
+        children:
+          Backend_Item_1:
+            type: programmatic
+            title: Users
+            sysmap_identifier: 3-e8278e7f4b569951e50dfb68d1702c14
+            route: admin
+          Backend_Item_2:
+            type: programmatic
+            title: Logout
+            sysmap_identifier: 3-7c7ea068b9b66c5623bd85bc99f36bf5

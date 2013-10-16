@@ -1,0 +1,41 @@
+Region_Model_Mapper_Region:
+  connection: doctrine
+  tableName: region_regions
+  columns:
+    id:
+      type: integer(11)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    title:
+      type: string(255)
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+
+Region_Model_Mapper_City:
+  connection: doctrine
+  tableName: region_cities
+  columns:
+    id:
+      type: integer(11)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    title:
+      type: string(255)
+    region_id:
+      type: integer(11)
+      unsigned: true
+    delivery_type:
+      type: string(50)
+  relations:
+    Region:
+      class: Region_Model_Mapper_Region
+      local: region_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
