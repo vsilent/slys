@@ -30,9 +30,4 @@ Discussion board https://groups.google.com/forum/?hl=en&fromgroups#!forum/slysco
 Currently, there is one part-time developer who works under this project some hours a month.
 Please donate to motivate and support other developers if you want this project to grow.<br>
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="HATQLES7WTYDC">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
+<a href='https://www.pledgie.com/campaigns/22475'><img alt='Click here to lend your support to: SLYS CMF framework written in PHP  based on Zend Framework 1 and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/22475.png?skin_name=chrome' border='0' ></a>
