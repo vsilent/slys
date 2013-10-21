@@ -30,4 +30,4 @@ Discussion board https://groups.google.com/forum/?hl=en&fromgroups#!forum/slysco
 Currently, there is one part-time developer who works under this project some hours a month.
 Please donate to motivate and support other developers if you want this project to grow.<br>
 
-<a href='https://www.pledgie.com/campaigns/22475'><img alt='Click here to lend your support to: SLYS CMF framework written in PHP  based on Zend Framework 1 and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/22475.png?skin_name=chrome' border='0' ></a>
+<a href='https://www.pledgie.com/campaigns/22475'><img alt='Click here to lend your support to: SLYS CMF framework written in PHP  based on Zend Framework 1 and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/22475.png?skin_name=chrome' border='0' ><img src="https://pledgie.com/campaigns/22475.png"></a>
